@@ -1,8 +1,9 @@
 ﻿# DEMO-HUS-STUDENT-MANAGEMENT-SYSTEM
-Cài đặt thư viện: 
+## Cài đặt thư viện: 
 - PyQt5 bằng câu lệnh pip install PyQt5 
 - Sqlite3 bằng câu lệnh pip install sqlite3
-Chạy chương trình:
+  
+## Chạy chương trình:
 1. Git clone github về máy tính cá nhân hoặc tải file zip
 2. Chạy lệnh trên terminal: python main.py
 Đọc file .db bằng cách:
