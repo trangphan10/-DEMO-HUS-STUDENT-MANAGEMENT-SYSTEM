@@ -6,7 +6,7 @@
 ## Chạy chương trình:
 1. Git clone github về máy tính cá nhân hoặc tải file zip
 2. Chạy lệnh trên terminal: python main.py
-Đọc file .db bằng cách:
+## Đọc file .db bằng cách:
 1. Tải xuống DB Browser (SQLite)
 2. Import file .db trên trình duyệt
 3. Truy vấn SQL để xem cơ sở dữ liệu: SELECT * FROM student
