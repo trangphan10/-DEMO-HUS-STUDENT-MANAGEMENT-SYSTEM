@@ -9,10 +9,16 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QTableWidgetItem,QTableWidget,QComboBox,QVBoxLayout,QGridLayout,QDialog,QWidget, \
+QPushButton, QApplication, QMainWindow,QAction,QMessageBox,QLabel,QTextEdit,QProgressBar,QLineEdit, QHBoxLayout
+from PyQt5.QtCore import QCoreApplication
+from database import DBHelper
 
 class Ui_Form(object):
-    def setupUi(self, Form):
+    def __init__(self,Form):
+        # super.__init__()
+        if Form.layout() is not None:
+            QWidget().setLayout(Form.layout())
         Form.setObjectName("Form")
         Form.resize(504, 226)
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
@@ -230,12 +236,40 @@ class Ui_Form(object):
         self.pushButton_2.setText(_translate("Form", "Cancel"))
         self.pushButton_3.setText(_translate("Form", "Reset"))
 
+        # self.rollText = QLineEdit(self)
+        # self.nameText = QLineEdit(self)
 
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     Form = QtWidgets.QWidget()
-#     ui = Ui_Form()
-#     ui.setupUi(Form)
-#     Form.show()
-#     sys.exit(app.exec_())
+
+        self.pushButton.clicked.connect(self.Submit)
+        self.pushButton_2.clicked.connect(self.Cancel)
+        self.pushButton_3.clicked.connect(self.Reset)
+    def Submit(self): 
+        self.sid =int(self.lineEdit.text())
+        self.sname = self.lineEdit_2.text()
+        self.sgrade = self.comboBox.currentIndex()
+        self.sfal = self.comboBox_2.currentIndex()
+        self.scoursa = self.comboBox_3.currentIndex()
+        self.scoursb = self.comboBox_4.currentIndex()
+        self.scoursc = self.comboBox_5.currentIndex()
+        self.scoursd = self.comboBox_6.currentIndex()
+        self.DB = DBHelper()
+        self.DB.addStudent(self.sid,self.sname,self.sgrade,self.sfal,self.scoursa,self.scoursb,self.scoursc,self.scoursd)
+    def Cancel(self): 
+        Form.close()
+    def Reset(self):
+        self.lineEdit_2.setText('')
+        self.lineEdit.setText('')
+    
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form(Form)
+    ui.__init__(Form)
+    Form.show()
+    sys.exit(app.exec_())
+
+
