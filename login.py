@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Student-Database-Management\project\login.ui'
+# Form implementation generated from reading ui file 'D:\Student-Database-Management\project\UI\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -9,71 +9,59 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication,QMainWindow,QTableWidgetItem,QTableWidget,QComboBox,QVBoxLayout,QGridLayout,QDialog,QWidget, \
+QPushButton,QAction,QMessageBox,QLabel,QTextEdit,QProgressBar,QLineEdit, QHBoxLayout
 
-
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(397, 206)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(120, 50, 113, 20))
-        self.lineEdit.setObjectName("lineEdit")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(50, 50, 47, 13))
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(50, 90, 47, 13))
-        self.label_2.setObjectName("label_2")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(120, 90, 113, 20))
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(170, 10, 47, 21))
+class Ui_Signin(object):
+    def setupUi(self, Signin):
+        Signin.setObjectName("Signin")
+        Signin.resize(279, 175)
+        self.pushButton = QtWidgets.QPushButton(Signin)
+        self.pushButton.setGeometry(QtCore.QRect(110, 130, 75, 23))
+        self.pushButton.setObjectName("pushButton")
+        self.label_3 = QtWidgets.QLabel(Signin)
+        self.label_3.setGeometry(QtCore.QRect(120, 20, 47, 21))
         font = QtGui.QFont()
         font.setFamily("Sitka Small")
         font.setPointSize(11)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(160, 130, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 397, 21))
-        self.menubar.setObjectName("menubar")
-        self.menuMenu = QtWidgets.QMenu(self.menubar)
-        self.menuMenu.setObjectName("menuMenu")
-        self.menuClear = QtWidgets.QMenu(self.menuMenu)
-        self.menuClear.setObjectName("menuClear")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.menuClear.addSeparator()
-        self.menuMenu.addAction(self.menuClear.menuAction())
-        self.menubar.addAction(self.menuMenu.menuAction())
+        self.frame = QtWidgets.QFrame(Signin)
+        self.frame.setGeometry(QtCore.QRect(40, 50, 201, 80))
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setGeometry(QtCore.QRect(0, 10, 47, 13))
+        self.label.setObjectName("label")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit.setGeometry(QtCore.QRect(70, 10, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setGeometry(QtCore.QRect(0, 40, 47, 13))
+        self.label_2.setObjectName("label_2")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_2.setGeometry(QtCore.QRect(70, 40, 113, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(Signin)
+        QtCore.QMetaObject.connectSlotsByName(Signin)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Signin):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Username"))
-        self.label_2.setText(_translate("MainWindow", "Password"))
-        self.label_3.setText(_translate("MainWindow", "Login"))
-        self.pushButton.setText(_translate("MainWindow", "Enter"))
-        self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
-        self.menuClear.setTitle(_translate("MainWindow", "Clear"))
+        Signin.setWindowTitle(_translate("Signin", "Dialog"))
+        self.pushButton.setText(_translate("Signin", "Enter"))
+        self.label_3.setText(_translate("Signin", "Login"))
+        self.label.setText(_translate("Signin", "Username"))
+        self.label_2.setText(_translate("Signin", "Password"))
 
 
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     MainWindow = QtWidgets.QMainWindow()
-#     ui = Ui_MainWindow()
-#     ui.setupUi(MainWindow)
-#     MainWindow.show()
-#     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Signin = QtWidgets.QDialog()
+    ui = Ui_Signin()
+    ui.setupUi(Signin)
+    Signin.show()
+    sys.exit(app.exec_())

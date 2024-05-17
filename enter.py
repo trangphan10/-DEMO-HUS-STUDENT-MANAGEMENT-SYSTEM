@@ -263,13 +263,13 @@ class Ui_Form(object):
 
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form(Form)
-    ui.__init__(Form)
-    Form.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     Form = QtWidgets.QWidget()
+#     ui = Ui_Form(Form)
+#     ui.__init__(Form)
+#     Form.show()
+#     sys.exit(app.exec_())
 
 
